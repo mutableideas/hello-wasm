@@ -1,5 +1,8 @@
 # Go - Web Assembly
 
+## Tutorial Reference
+[Wasm By Example](https://wasmbyexample.dev/examples/hello-world/hello-world.go.en-us.html)
+
 ## Installation
 
 Using `wsl` on `Windows`
@@ -13,12 +16,22 @@ sudo dpkg -i tinygo_0.23.0_amd64.deb
 
 ## Compile
 
+The following script is used to build and copy over the assets to the `wasm-hello` project.  You can run the `build.sh` script to accomplish this.
+
+`build.sh` will create a directory `src/public/scripts/go` in the `wasm-hello` project.
+
+It builds and copies the `main.wasm` file.
+
 ```
-tinygo build -o main.wasm -target wasm ./main.go
+tinygo build -o ../wasm-hello/src/public/scripts/go/main.wasm -target wasm ./main.go
 ```
 
-The `wasm_exec.js` must be added to use `Go wasm modules` in the browser.
-
+It copies over the `wasm_exec.js` file to the `src/public/scripts/go` directory in the `wasm-hello` project.
 ```
-cp $(tinygo env TINYGOROOT)/targets/wasm_exec.js .
+cp $(tinygo env TINYGOROOT)/targets/wasm_exec.js ../wasm-hello/src/public/scripts/go
+```
+
+It copies over the `go-hello-world.js` file into the `src/public/scripts/go` directory in the `wasm-hello` project.
+```
+cp ./scripts/go-hello-world.js ../wasm-hello/src/public/scripts/go
 ```
