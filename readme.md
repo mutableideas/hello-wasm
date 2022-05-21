@@ -10,3 +10,6 @@ The `hello-worlds` presented here will be part of an application and not full ap
 ## Go
 
 ## Rust
+
+## wasm-hello
+This is a `NestJs` application to test out the `hello-world` applications.  See [Nest ReadMe.md](./wasm-hello/README.md) for details to get it up and running.

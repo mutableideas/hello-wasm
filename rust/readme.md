@@ -29,3 +29,5 @@ One this is installed, at this directory level run the following command.
 ```
 wasm-pack build --target web --out-dir ../wasm-hello/src/public/scripts/rust
 ```
+
+The output directory is part of the `NestJs` application.
