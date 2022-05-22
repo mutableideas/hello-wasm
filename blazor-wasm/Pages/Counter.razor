@@ -1,0 +1,26 @@
+﻿@page "/counter"
+@using System.Runtime.InteropServices
+
+<PageTitle>Counter</PageTitle>
+
+<h1>Counter</h1>
+
+<p role="status">Current count: @currentCount</p>
+
+@@Fact(@currentCount) Factorial: @factorial
+
+<button class="btn btn-primary" @onclick="IncrementCount">Click me</button>
+
+@code {
+    private int currentCount = 0;
+    private int factorial = 0;
+
+    private void IncrementCount()
+    {
+        currentCount++;
+        factorial = fact(currentCount);
+    }
+
+    [DllImport("test")]
+    static extern int fact(int i);
+}
